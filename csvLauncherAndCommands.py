@@ -33,6 +33,7 @@ def processCSV():
             fieldNames = csv.DictReader(csvFile)
             csvGUI.outputArea.insert(tk.END, fieldNames.fieldnames)
         csvGUI.outputArea.config(state=tk.DISABLED)
+    # continue adding functionality for Options 2 and 3 here.
     elif csvGUI.radioButtonOptionControl.get() == "D":
         csvGUI.inputField2.config(state=tk.DISABLED)
         csvGUI.inputField3.config(state=tk.DISABLED)
