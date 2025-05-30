@@ -33,10 +33,27 @@ def processCSV():
             fieldNames = csv.DictReader(csvFile)
             csvGUI.outputArea.insert(tk.END, fieldNames.fieldnames)
         csvGUI.outputArea.config(state=tk.DISABLED)
-    # continue adding functionality for Options 2 and 3 here.
+    elif csvGUI.radioButtonOptionControl.get() == "B":
+        csvGUI.outputArea.config(state=tk.NORMAL)
+        with open(filePath, "r", encoding="utf-8") as csvFile:
+            file = csv.DictReader(csvFile)
+            column = csvGUI.inputField2.get()
+            if column in file.fieldnames:
+                for readRow in file:
+                    #print(readRow[column]) # used for debugging.
+                    csvGUI.outputArea.insert(tk.END, readRow[column] + "\n")
+        csvGUI.outputArea.config(state=tk.DISABLED)
+    elif csvGUI.radioButtonOptionControl.get() == "C":
+        csvGUI.outputArea.config(state=tk.NORMAL)
+        with open(filePath, "r", encoding="utf-8") as csvFile:
+            file = csv.reader(csvFile)
+            row = csvGUI.inputField3.get()
+            for readRow in file:
+                if row in readRow:
+                    #print(readRow) # used for debugging.
+                    csvGUI.outputArea.insert(tk.END, readRow)
     elif csvGUI.radioButtonOptionControl.get() == "D":
         csvGUI.inputField2.config(state=tk.DISABLED)
-        csvGUI.inputField3.config(state=tk.DISABLED)
         with open(filePath, "r", encoding="utf-8") as csvFile:
             csvGUI.outputArea.config(state=tk.NORMAL)
             reader = csv.DictReader(csvFile)
