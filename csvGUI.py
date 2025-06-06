@@ -1,13 +1,20 @@
+# Name: Rusho Binnabi
+# Date: 6/6/2025
+# Project: CSV - GUI
+# Contact Information: RushoBinnabi123@yahoo.com
+
 import tkinter
 from tkinter import StringVar, scrolledtext
 
 import csvLauncherAndCommands
 
+# this csvGUI file has the code needed for the GUI to function.
+
 mainWindow = tkinter.Tk()
 mainWindow.title("CSV File Analyzer")
 mainWindow.geometry("500x500")
 
-radioButtonOptionControl = StringVar(value="A")
+radioButtonOptionControl = StringVar(value="A") # used to control switching between the radio button options.
 
 inputField = tkinter.Entry(mainWindow, state=tkinter.DISABLED)
 inputField.pack(side=tkinter.TOP, padx=10, pady=50)

@@ -1,11 +1,21 @@
+# Name: Rusho Binnabi
+# Date: 6/6/2025
+# Project: CSV - Launcher and Commands
+# Contact Information: RushoBinnabi123@yahoo.com
+
 import csv
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
 
 import csvGUI
 
+# this csvLauncherAndCommands file has all the code needed for the application to function.
+
 filePath = ""
 fieldName = []
+
+# this browseFilesCommand() function gets the csv files that will be used and processed by the application
+# when the appropriate button is clicked.
 
 def browseFilesCommand():
     tk.Tk().withdraw()
@@ -13,6 +23,8 @@ def browseFilesCommand():
     csvGUI.inputField.config(state=tk.NORMAL)
     csvGUI.inputField.insert(tk.END, fn)
     csvGUI.inputField.config(state=tk.DISABLED)
+
+# this clearFilePathInputFieldCommand() function will clear the application screen when the appropriate button is clicked.
 
 def clearFilePathInputFieldCommand():
     csvGUI.outputArea.config(state=tk.NORMAL)
@@ -24,6 +36,8 @@ def clearFilePathInputFieldCommand():
     csvGUI.inputField2.config(state=tk.NORMAL)
     csvGUI.inputField3.config(state=tk.NORMAL)
     csvGUI.radioButtonHeadersOption.select()
+
+# this processCSV() will process the csv file and display it on the GUI when the appropriate button is clicked.
 
 def processCSV():
     filePath = csvGUI.inputField.get()
